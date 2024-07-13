@@ -34,4 +34,10 @@ export default class TerminalUtil {
     static limpar() {
         terminal.clear();
     }
+
+    static async esperarEnter(): Promise<void> {
+        terminal.white('\nPressione ENTER para continuar...');
+        await terminal.inputField({ echo: false }).promise;
+
+    }
 }
