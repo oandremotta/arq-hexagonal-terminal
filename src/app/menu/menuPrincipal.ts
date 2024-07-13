@@ -1,5 +1,6 @@
 import TerminalUtil from "../util/TerminalUtil";
 import menuFundamentos from "./menuFundamentos";
+import menuUsuario from "./menuUsuario";
 
 export default async function menuPrincipal() {
     TerminalUtil.titulo("Menu Principal");
@@ -7,7 +8,8 @@ export default async function menuPrincipal() {
 
     const [indice] = await TerminalUtil.menu([
         '1. Fundamentos',
-        '2. Sair'
+        '2. Usuários',
+        'Sair'
     ]);
 
     switch (indice) {
@@ -15,6 +17,9 @@ export default async function menuPrincipal() {
             menuFundamentos();
             break;
         case 1:
-            console.log('Sair');
+            menuUsuario();
+            break;
+        default:
+            process.exit();
     }
 }
